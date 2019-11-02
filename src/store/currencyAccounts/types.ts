@@ -1,16 +1,25 @@
-import { CurrencyId } from "../shared/types";
+import { Currency } from "../shared/types";
 
 export const SELECT_CURRENCY_ACCOUNT = 'SELECT_CURRENCY_ACCOUNT';
 export const SET_CURRENCY_ACCOUNT_BALANCE = 'SET_CURRENCY_ACCOUNT_BALANCE';
 
+export type CurrencyAccountsBalance = {
+    [P in Currency]?: Number
+}
+
+export interface CurrencyAccountsState {
+    selectedCurrencyAccount: Currency,
+    currencyAccountsBalance: CurrencyAccountsBalance
+}
+
 export interface SelectCurrencyAccountAction {
     type: typeof SELECT_CURRENCY_ACCOUNT,
-    currency: CurrencyId
+    currency: Currency
 }
 
 export interface SetCurrencyAccountBalanceAction {
     type: typeof SET_CURRENCY_ACCOUNT_BALANCE,
-    currency: CurrencyId,
+    currency: Currency,
     balance: Number
 }
 

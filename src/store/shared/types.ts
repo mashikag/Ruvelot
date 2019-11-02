@@ -1,4 +1,4 @@
-export type CurrencyId = "AED" | "AFN" | "ALL" | "AMD"
+export type Currency = "AED" | "AFN" | "ALL" | "AMD"
     | "ANG" | "AOA" | "ARS" | "AUD" | "AWG" | "AZN" | "BAM"
     | "BBD" | "BDT" | "BGN" | "BHD" | "BIF" | "BMD" | "BND"
     | "BOB" | "BRL" | "BSD" | "BTC" | "BTN" | "BWP" | "BYN"
@@ -23,3 +23,4 @@ export type CurrencyId = "AED" | "AFN" | "ALL" | "AMD"
     | "UYU" | "UZS" | "VEF" | "VES" | "VND" | "VUV" | "WST"
     | "XAF" | "XAG" | "XAU" | "XCD" | "XDR" | "XOF" | "XPD"
     | "XPF" | "XPT" | "YER" | "ZAR" | "ZMW" | "ZWL";
+
