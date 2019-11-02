@@ -2,8 +2,8 @@ import { Currency } from "../shared/types";
 
 export const FETCH_CURRENCY_RATES = {
     REQUEST: 'FETCH_CURRENCY_RATES_REQUEST',
-    RESPONSE: 'FETCH_CURRENCY_RATES_RESPONSE',
-    ERROR: 'FETCH_CURRENCY_RATES_ERROR',
+    SUCCESS: 'FETCH_CURRENCY_RATES_SUCCESS',
+    FAILURE: 'FETCH_CURRENCY_RATES_FAILURE',
 };
 export const SET_EXCHANGE_FROM_CURRENCY = 'SET_EXCHANGE_FROM_CURRENCY';
 export const SET_EXCHANGE_TO_CURRENCY = 'SET_EXCHANGE_TO_CURRENCY';
@@ -28,13 +28,13 @@ export interface FetchCurrencyRatesRequestAction {
 }
 
 export interface FetchCurrencyRatesResponseAction {
-    type: typeof FETCH_CURRENCY_RATES.RESPONSE,
+    type: typeof FETCH_CURRENCY_RATES.SUCCESS,
     exchangeRates: ExchangeRates,
     baseCurrency: Currency
 }
 
 export interface FetchCurrencyRatesErrorAction {
-    type: typeof FETCH_CURRENCY_RATES.ERROR,
+    type: typeof FETCH_CURRENCY_RATES.FAILURE,
     errorMessage: String
 }
 

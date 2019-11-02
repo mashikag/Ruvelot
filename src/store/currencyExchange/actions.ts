@@ -7,7 +7,7 @@ export function fetchCurrencyRatesRequest(): CurrencyExchangeActionTypes {
 
 export function fetchCurrencyRatesResponse(baseCurrency: Currency, exchangeRates: ExchangeRates): CurrencyExchangeActionTypes {
     return {
-        type: FETCH_CURRENCY_RATES.RESPONSE,
+        type: FETCH_CURRENCY_RATES.SUCCESS,
         baseCurrency,
         exchangeRates
     };
@@ -15,7 +15,7 @@ export function fetchCurrencyRatesResponse(baseCurrency: Currency, exchangeRates
 
 export function fetchCurrencyRatesError(errorMessage: String): CurrencyExchangeActionTypes {
     return {
-        type: FETCH_CURRENCY_RATES.ERROR,
+        type: FETCH_CURRENCY_RATES.FAILURE,
         errorMessage
     };
 }

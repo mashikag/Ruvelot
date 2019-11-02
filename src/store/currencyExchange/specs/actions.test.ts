@@ -34,7 +34,7 @@ describe('fetch exchange currency rates actions', () => {
         () => {
             const errorMessage = 'Oh, this was bad.';
             const expectedAction = {
-                type: FETCH_CURRENCY_RATES.ERROR,
+                type: FETCH_CURRENCY_RATES.FAILURE,
                 errorMessage
             };
             expect(fetchCurrencyRatesError(errorMessage)).toEqual(expectedAction);
@@ -58,7 +58,7 @@ describe('fetch exchange currency rates actions', () => {
                 "EUR": 4.11,
             };
             const expectedAction = {
-                type: FETCH_CURRENCY_RATES.RESPONSE,
+                type: FETCH_CURRENCY_RATES.SUCCESS,
                 baseCurrency: baseExchangeCurrency,
                 exchangeRates
             };
