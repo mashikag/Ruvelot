@@ -1,18 +1,14 @@
-import React from 'react';
-import CurrencyAccountsContainer from './containers/CurrencyAccounts';
-import CurrencyExchangeContainer from './containers/CurrencyExchange';
+import React, { ReactElement } from 'react'
+import CurrencyAccounts from './components/CurrencyAccounts/CurrencyAccounts'
+import CurrencyExchange from './components/CurrencyExchange/CurrencyExchange'
 
-const App: React.SFC = () =>
-  <div>
-    <CurrencyAccountsContainer
-      selectedCurrencyAccount={"USD"}
-      currencyAccountsBalance={{}} />
-    <CurrencyExchangeContainer
-      baseExchangeCurrency={"USD"}
-      exchangeFromCurrency={"USD"}
-      exchangeToCurrency={"USD"}
-      exchangeRates={{}}
-      fetchExchangeRatesState={{ isFetching: false }} />
-  </div>
+function App(): ReactElement<any> {
+  return (
+    <>
+    <CurrencyAccounts />
+    <CurrencyExchange />
+    </>
+  )
+}
 
-export default App;
+export default App

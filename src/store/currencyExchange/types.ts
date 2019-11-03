@@ -1,11 +1,11 @@
-import { Currency } from "../shared/types";
+import { Currency } from "../shared/types"
 
-export const FETCH_CURRENCY_RATES_FAILURE = 'FETCH_CURRENCY_RATES_FAILURE';
-export const FETCH_CURRENCY_RATES_REQUEST = 'FETCH_CURRENCY_RATES_REQUEST';
-export const FETCH_CURRENCY_RATES_SUCCESS = 'FETCH_CURRENCY_RATES_SUCCESS';
+export const FETCH_CURRENCY_RATES_FAILURE = 'FETCH_CURRENCY_RATES_FAILURE'
+export const FETCH_CURRENCY_RATES_REQUEST = 'FETCH_CURRENCY_RATES_REQUEST'
+export const FETCH_CURRENCY_RATES_SUCCESS = 'FETCH_CURRENCY_RATES_SUCCESS'
 
-export const SET_EXCHANGE_FROM_CURRENCY = 'SET_EXCHANGE_FROM_CURRENCY';
-export const SET_EXCHANGE_TO_CURRENCY = 'SET_EXCHANGE_TO_CURRENCY';
+export const SET_EXCHANGE_FROM_CURRENCY = 'SET_EXCHANGE_FROM_CURRENCY'
+export const SET_EXCHANGE_TO_CURRENCY = 'SET_EXCHANGE_TO_CURRENCY'
 
 export interface CurrencyExchangeState {
   baseExchangeCurrency: Currency,
@@ -56,4 +56,4 @@ export type ExchangeRates = {
 
 export type CurrencyExchangeActionTypes = FetchCurrencyRatesFailureAction |
   FetchCurrencyRatesRequestAction | FetchCurrencyRatesSuccessAction |
-  SetExchangeFromCurrencyAction | SetExchangeToCurrencyAction;
+  SetExchangeFromCurrencyAction | SetExchangeToCurrencyAction

@@ -1,5 +1,4 @@
-import { CurrencyExchangeState, CurrencyExchangeActionTypes, FETCH_CURRENCY_RATES_FAILURE, SET_EXCHANGE_FROM_CURRENCY, SET_EXCHANGE_TO_CURRENCY, FetchCurrencyRatesFailureAction, FetchCurrencyRatesSuccessAction, SetExchangeFromCurrencyAction, SetExchangeToCurrencyAction, FETCH_CURRENCY_RATES_REQUEST, FETCH_CURRENCY_RATES_SUCCESS } from './types';
-import { CurrencyAccountActionTypes } from '../currencyAccounts/types';
+import { CurrencyExchangeState, CurrencyExchangeActionTypes, FETCH_CURRENCY_RATES_FAILURE, SET_EXCHANGE_FROM_CURRENCY, SET_EXCHANGE_TO_CURRENCY, FETCH_CURRENCY_RATES_REQUEST, FETCH_CURRENCY_RATES_SUCCESS } from './types';
 
 const initialState: CurrencyExchangeState = {
   baseExchangeCurrency: "USD",
