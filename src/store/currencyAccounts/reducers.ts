@@ -2,7 +2,7 @@ import { CurrencyAccountsState, CurrencyAccountActionTypes, SELECT_CURRENCY_ACCO
 
 const initialState: CurrencyAccountsState = {
   selectedCurrencyAccount: "EUR",
-  currencyAccountsBalance: { "EUR": 0 }
+  currencyAccountBalances: { "EUR": 1000 }
 }
 
 export default function currencyAccounts(state = initialState, action: CurrencyAccountActionTypes):
@@ -16,8 +16,8 @@ export default function currencyAccounts(state = initialState, action: CurrencyA
     case SET_CURRENCY_ACCOUNT_BALANCE:
       return {
         ...state,
-        currencyAccountsBalance: {
-          ...state.currencyAccountsBalance,
+        currencyAccountBalances: {
+          ...state.currencyAccountBalances,
           [action.currency]: action.balance
         }
       }

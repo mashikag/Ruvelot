@@ -1,14 +1,14 @@
-import React from 'react'
+import React, { ReactElement } from 'react'
 import AccountBalance from './AccountBalance'
-import AccountNavigation from './AccountNavigation'
 import AccountSelector from './AccountSelector'
 
-const CurrencyAccounts: React.SFC<any> =
-  () =>
+function CurrencyAccounts(): ReactElement<any> {
+  return (
     <div>
       <AccountSelector />
       <AccountBalance />
-      <AccountNavigation />
     </div>
+  );
+}
 
 export default CurrencyAccounts

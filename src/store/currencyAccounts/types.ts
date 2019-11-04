@@ -3,13 +3,13 @@ import { Currency } from "../shared/types"
 export const SELECT_CURRENCY_ACCOUNT = 'SELECT_CURRENCY_ACCOUNT'
 export const SET_CURRENCY_ACCOUNT_BALANCE = 'SET_CURRENCY_ACCOUNT_BALANCE'
 
-export type CurrencyAccountsBalance = {
-  [P in Currency]?: Number
+export type CurrencyAccountBalances = {
+  [P in Currency]?: number
 }
 
 export interface CurrencyAccountsState {
   selectedCurrencyAccount: Currency,
-  currencyAccountsBalance: CurrencyAccountsBalance
+  currencyAccountBalances: CurrencyAccountBalances
 }
 
 export interface SelectCurrencyAccountAction {

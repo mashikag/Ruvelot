@@ -10,7 +10,7 @@ export interface AccountBalanceState {
 function AccountBalance(): React.ReactElement<any> {
   const { currency, balance } = useSelector<StoreState, AccountBalanceState>(
     (store) => {
-      const { currencyAccountsBalance: balances, selectedCurrencyAccount: currency } = store.currencyAccounts
+      const { currencyAccountBalances: balances, selectedCurrencyAccount: currency } = store.currencyAccounts
       return {
         balance: balances[currency] || 0,
         currency
@@ -19,7 +19,7 @@ function AccountBalance(): React.ReactElement<any> {
   )
   return (
     <div>
-      {`${currency} ${balance}`}
+      {`${currency} ${balance.toFixed(2)}`}
     </div>
   )
 }
