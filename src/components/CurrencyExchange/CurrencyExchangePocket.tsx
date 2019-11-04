@@ -27,10 +27,10 @@ function CurrencyExchangePocket(props: CurrencyExchangePocketProps):
 
   const safeOnAmountChange = ({ target }: ChangeEvent<HTMLInputElement>) => {
     if (target.value === '') {
-      target.value = '0'
       props.onAmountChange(null)
+    } else {
+      props.onAmountChange(safeAmount(target.value))
     }
-    props.onAmountChange(parseFloat(parseFloat(target.value).toFixed(2)))
   }
 
   return (
@@ -41,7 +41,7 @@ function CurrencyExchangePocket(props: CurrencyExchangePocketProps):
       <ExchangeAmountInput
         type='number'
         min='0'
-        value={props.amount ? safeAmount(props.amount) : ''}
+        value={props.amount === null ? '' : safeAmount(props.amount)}
         onChange={safeOnAmountChange}
       />
     </Pocket>

@@ -27,6 +27,9 @@ export function calcExchangedAmount(
   return safeAmount(baseCurrencyAmount * rates[toCurrency])
 }
 
-export function safeAmount(amount: number): number {
+export function safeAmount(amount: number | string): number {
+  if (typeof amount === 'string') {
+    return parseFloat(parseFloat(amount).toFixed(2))
+  }
   return parseFloat(amount.toFixed(2))
 }
