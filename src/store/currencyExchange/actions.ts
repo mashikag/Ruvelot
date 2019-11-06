@@ -5,7 +5,7 @@ import { reject } from "q"
 import { ThunkDispatch, ThunkAction } from "redux-thunk"
 
 const FETCH_EXCHANGE_RATES_INTERVAL_MS = 10 * 1000
-const EXCHANGE_RATES_APP_ID = '58b427febecf4f6d92bf8a92c5c94b61'
+const EXCHANGE_RATES_APP_ID = '44218439987b4b01aaaeb3268532f64f'
 export const FETCH_FAILURE_MESSAGE = 'Error while fetching exchange rates.'
 export const EXCHANGE_RATES_URL = `https://openexchangerates.org/api/latest.json?app_id=${EXCHANGE_RATES_APP_ID}`
 
