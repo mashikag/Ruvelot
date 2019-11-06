@@ -63,15 +63,16 @@ export default SubmitExchangeButton
 
 const Button =
   styled.button({
+    width: '200px',
     display: 'block',
     backgroundColor: 'rgb(235, 0, 141)',
     lineHeight: '1.5em',
-    fontSize: '1rem',
+    fontSize: '1.2em',
     'font-weight': '500',
     color: 'white',
     cursor: 'pointer',
     borderRadius: '2em',
-    padding: '0.625em 3em',
+    padding: '10px 50px',
     margin: '20px auto',
     ":disabled": { opacity: '0.2' }
   })
