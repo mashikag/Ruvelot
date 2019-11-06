@@ -88,5 +88,6 @@ function ExchangePockets(): ReactElement {
 export default ExchangePockets
 
 const PocketsContainer = styled.div({
-  display: 'flex'
+  display: 'flex',
+  flexFlow: 'column'
 }) 
