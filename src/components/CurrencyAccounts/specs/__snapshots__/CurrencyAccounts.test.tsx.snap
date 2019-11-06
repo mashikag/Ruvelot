@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account Select Component shallow snapshot 1`] = `
+<styled.div>
+  <styled.div>
+    <CurrencyAccountBalance />
+    <AccountSelect />
+  </styled.div>
+  <styled.header />
+</styled.div>
+`;

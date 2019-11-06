@@ -1,5 +1,5 @@
 import { Currency } from "../shared/types"
-import { CurrencyExchangeActionTypes, ExchangeRates, SET_EXCHANGE_FROM_AMOUNT, SET_EXCHANGE_TO_AMOUNT, SET_EXCHANGE_FROM_CURRENCY, SET_EXCHANGE_TO_CURRENCY, FETCH_CURRENCY_RATES_REQUEST, FETCH_CURRENCY_RATES_SUCCESS, FETCH_CURRENCY_RATES_FAILURE } from "./types"
+import { CurrencyExchangeActionTypes, ExchangeRates, SET_EXCHANGE_FROM_AMOUNT, SET_EXCHANGE_TO_AMOUNT, SET_EXCHANGE_FROM_CURRENCY, SET_EXCHANGE_TO_CURRENCY, FETCH_CURRENCY_RATES_REQUEST, FETCH_CURRENCY_RATES_SUCCESS, FETCH_CURRENCY_RATES_FAILURE, SWITCH_EXCHANGE_CURRENCIES } from "./types"
 import { AnyAction } from "redux"
 import { reject } from "q"
 import { ThunkDispatch, ThunkAction } from "redux-thunk"
@@ -64,6 +64,11 @@ export function setExchangeToCurrency(currency: Currency):
         type: SET_EXCHANGE_TO_CURRENCY,
         currency
     }
+}
+
+export function swtichExchangeCurrencies():
+    CurrencyExchangeActionTypes {
+    return { type: SWITCH_EXCHANGE_CURRENCIES }
 }
 
 export function fetchExchangeRates():

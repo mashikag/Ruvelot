@@ -5,9 +5,12 @@ export const FETCH_CURRENCY_RATES_REQUEST = 'FETCH_CURRENCY_RATES_REQUEST'
 export const FETCH_CURRENCY_RATES_SUCCESS = 'FETCH_CURRENCY_RATES_SUCCESS'
 
 export const SET_EXCHANGE_FROM_AMOUNT = 'SET_EXCHANGE_FROM_AMOUNT'
-export const SET_EXCHANGE_TO_AMOUNT = 'SET_EXCHANGE_TO_AMOUNT'
 export const SET_EXCHANGE_FROM_CURRENCY = 'SET_EXCHANGE_FROM_CURRENCY'
+
+export const SET_EXCHANGE_TO_AMOUNT = 'SET_EXCHANGE_TO_AMOUNT'
 export const SET_EXCHANGE_TO_CURRENCY = 'SET_EXCHANGE_TO_CURRENCY'
+
+export const SWITCH_EXCHANGE_CURRENCIES = 'SWITCH_EXCHANGE_CURRENCIES'
 
 export interface CurrencyExchangeState {
   exchangeFromAmount: number | null
@@ -59,6 +62,10 @@ export interface SetExchangeToCurrencyAction {
   currency: Currency
 }
 
+export interface SwitchExchangeCurrencies {
+  type: typeof SWITCH_EXCHANGE_CURRENCIES
+}
+
 export interface OpenExchangeRatesResponse {
   base: Currency
   rates: ExchangeRates
@@ -71,4 +78,5 @@ export type ExchangeRates = {
 export type CurrencyExchangeActionTypes = FetchCurrencyRatesFailureAction |
   FetchCurrencyRatesRequestAction | FetchCurrencyRatesSuccessAction |
   SetExchangeFromAmountAction | SetExchangeToAmountAction |
-  SetExchangeFromCurrencyAction | SetExchangeToCurrencyAction
+  SetExchangeFromCurrencyAction | SetExchangeToCurrencyAction |
+  SwitchExchangeCurrencies

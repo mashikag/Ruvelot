@@ -1,4 +1,4 @@
-import { CurrencyExchangeState, CurrencyExchangeActionTypes, FETCH_CURRENCY_RATES_FAILURE, SET_EXCHANGE_FROM_CURRENCY, SET_EXCHANGE_TO_CURRENCY, FETCH_CURRENCY_RATES_REQUEST, FETCH_CURRENCY_RATES_SUCCESS, SET_EXCHANGE_FROM_AMOUNT, SET_EXCHANGE_TO_AMOUNT } from './types'
+import { CurrencyExchangeState, CurrencyExchangeActionTypes, FETCH_CURRENCY_RATES_FAILURE, SET_EXCHANGE_FROM_CURRENCY, SET_EXCHANGE_TO_CURRENCY, FETCH_CURRENCY_RATES_REQUEST, FETCH_CURRENCY_RATES_SUCCESS, SET_EXCHANGE_FROM_AMOUNT, SET_EXCHANGE_TO_AMOUNT, SWITCH_EXCHANGE_CURRENCIES } from './types'
 import { calcExchangedAmount } from '../../utils/currencyExchangeUtils'
 
 const initialState: CurrencyExchangeState = {
@@ -93,6 +93,14 @@ export default function currencyExchange(
             state.ratesBaseCurrency
           ),
         exchangeToAmount: action.amount
+      }
+    case SWITCH_EXCHANGE_CURRENCIES:
+      return {
+        ...state,
+        exchangeFromAmount: state.exchangeToAmount,
+        exchangeFromCurrency: state.exchangeToCurrency,
+        exchangeToAmount: state.exchangeFromAmount,
+        exchangeToCurrency: state.exchangeFromCurrency
       }
     default:
       return { ...state }

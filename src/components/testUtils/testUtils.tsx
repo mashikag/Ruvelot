@@ -1,4 +1,7 @@
 // Test utilities that are only meant to be used by component tests.
+import React from 'react'
+import { mount } from 'enzyme'
+import { Provider } from 'react-redux'
 import { StoreState } from "../../store/types";
 
 export function getDefaultStoreState(): StoreState {
@@ -19,5 +22,17 @@ export function getDefaultStoreState(): StoreState {
       rates: {},
       fetchExchangeRatesState: { isFetching: false }
     }
+  }
+}
+
+export function createMountWithStore(mockStore): (component, state: any) => any {
+  return (component, state) => {
+    const store = mockStore(state)
+    const wrapper = mount(
+      <Provider store={store}>
+        {component}
+      </Provider>
+    )
+    return { store, wrapper }
   }
 }

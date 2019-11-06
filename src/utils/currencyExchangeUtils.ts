@@ -12,7 +12,7 @@ export function calcExchangedAmount(
   }
 
   if (!rates[currency] || !rates[toCurrency]) {
-    throw 'At least one of the specified currencies has no corresponding exchange rate value.'
+    throw new Error('At least one of the specified currencies has no corresponding exchange rate value.')
   }
 
   let baseCurrencyAmount;
@@ -28,8 +28,12 @@ export function calcExchangedAmount(
 }
 
 export function safeAmount(amount: number | string): number {
+  let safeNumber: number;
   if (typeof amount === 'string') {
-    return parseFloat(parseFloat(amount).toFixed(2))
+    amount.replace('-', '')
+    safeNumber = parseFloat(parseFloat(amount).toFixed(2))
+  } else {
+    safeNumber = parseFloat(amount.toFixed(2))
   }
-  return parseFloat(amount.toFixed(2))
+  return Math.abs(safeNumber)
 }
