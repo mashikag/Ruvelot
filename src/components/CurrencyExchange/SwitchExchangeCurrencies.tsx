@@ -1,4 +1,4 @@
-import React, { ReactElement, useCallback } from 'react'
+import React, { ReactElement, useCallback, HTMLAttributes } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { swtichExchangeCurrencies } from '../../store'
@@ -10,8 +10,7 @@ function SwitchExchangeCurrencies(): ReactElement {
     [dispatch]
   )
   return (
-    <Button onClick={switchCurrenciesCallback}>
-      {'< >'}
+    <Button className={'glyphicon glyphicon-refresh'} onClick={switchCurrenciesCallback}>
     </Button>
   )
 }
