@@ -1,6 +1,6 @@
 // Test utilities that are only meant to be used by component tests.
-import React from 'react'
-import { mount } from 'enzyme'
+import React, { ReactElement } from 'react'
+import { mount, ReactWrapper } from 'enzyme'
 import { Provider } from 'react-redux'
 import { StoreState } from "../../store/types";
 
@@ -25,7 +25,9 @@ export function getDefaultStoreState(): StoreState {
   }
 }
 
-export function createMountWithStore(mockStore): (component, state: any) => any {
+export function createMountWithStore(mockStore: any):
+  (component: ReactElement, state: any) => { wrapper: ReactWrapper, store: any } {
+
   return (component, state) => {
     const store = mockStore(state)
     const wrapper = mount(
